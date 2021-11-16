@@ -1,24 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import InputOrLabel from "./components/InputOrLabel";
+
+import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
+  const [value, setValue] = useState<string>("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mt-2 mb-2 container">
+      <InputOrLabel value={value} onChange={(e) => setValue(e.target.value)} classNameInput="form-control" classNameLabel="form-label" />
     </div>
   );
 }
